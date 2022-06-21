@@ -32,7 +32,7 @@ mod app {
         let led = p0.p0_21.into_push_pull_output(Level::High).degrade(); // Create the blinky LED
         p0.p0_11.into_push_pull_output(Level::Low); // Set column to low to allow blinking
 
-        defmt::info!("Hello blinky!");
+        defmt::println!("RTIC blinky example");
         blink::spawn().ok();
         (Shared {}, Local { led }, init::Monotonics(mono))
     }
